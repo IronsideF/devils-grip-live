@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/devils-grip-live/static/css/main.36f318dd.css",
+    "main.js": "/devils-grip-live/static/js/main.7c68849c.js",
+    "static/js/787.497495b0.chunk.js": "/devils-grip-live/static/js/787.497495b0.chunk.js",
+    "static/media/pattern.webp": "/devils-grip-live/static/media/pattern.f101c2dbd020d62b4701.webp",
+    "static/media/Corpse.ttf": "/devils-grip-live/static/media/Corpse.11e620dd047af6f59b6e.ttf",
+    "static/media/voodoo.webp": "/devils-grip-live/static/media/voodoo.1cb7394b3bd874843eaa.webp",
+    "index.html": "/devils-grip-live/index.html",
+    "main.36f318dd.css.map": "/devils-grip-live/static/css/main.36f318dd.css.map",
+    "main.7c68849c.js.map": "/devils-grip-live/static/js/main.7c68849c.js.map",
+    "787.497495b0.chunk.js.map": "/devils-grip-live/static/js/787.497495b0.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.36f318dd.css",
+    "static/js/main.7c68849c.js"
+  ]
+}
