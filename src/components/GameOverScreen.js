@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { postScore } from "../services/DevilService.js";
+// import { postScore } from "../services/DevilService.js";
 
 const GameOverScreen = ({ score, exitGameOver, addScore, difficulty }) => {
-	const [formData, setFormData] = useState("");
-	const [submitted, setSubmitted] = useState(false);
+	// const [formData, setFormData] = useState("");
+	// const [submitted, setSubmitted] = useState(false);
 	// logic for what message to display depending on scores
 	let evaluation;
 	if (score < 73) {
@@ -31,29 +31,29 @@ const GameOverScreen = ({ score, exitGameOver, addScore, difficulty }) => {
 		evaluation = " You've done it! You are the Devil Gripper!";
 	}
 	// handle when Save button is clicked
-	const handleSubmit = (event) => {
-		event.preventDefault();
-		let userScore = {
-			name: formData,
-			score: score,
-			difficulty: difficulty,
-		};
+	// const handleSubmit = (event) => {
+	// 	event.preventDefault();
+	// 	let userScore = {
+	// 		name: formData,
+	// 		score: score,
+	// 		difficulty: difficulty,
+	// 	};
 
-		postScore(userScore).then((data) => {
-			addScore(data);
-		});
-		setSubmitted(true);
-	};
+	// 	postScore(userScore).then((data) => {
+	// 		addScore(data);
+	// 	});
+	// 	setSubmitted(true);
+	// };
 	//Handle change when name is entered
-	const handleChange = (event) => {
-		setFormData(event.target.value);
-	};
+	// const handleChange = (event) => {
+	// 	setFormData(event.target.value);
+	// };
 
 	return (
 		<Wrapper>
 			<Score>Your Score was: {score}</Score>
 			<Message>{evaluation}</Message>
-			{submitted ? (
+			{/* {submitted ? (
 				<Message>Score Submitted</Message>
 			) : (
 				<NameForm id="score-submit" onSubmit={handleSubmit}>
@@ -71,7 +71,7 @@ const GameOverScreen = ({ score, exitGameOver, addScore, difficulty }) => {
 
 					<Save type="submit" value="Save" id="save" />
 				</NameForm>
-			)}
+			)} */}
 
 			<DoneButton onClick={exitGameOver}>Home</DoneButton>
 		</Wrapper>
@@ -106,42 +106,42 @@ const Message = styled("h3")`
 	text-align: center;
 `;
 
-const NameForm = styled("form")`
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-`;
+// const NameForm = styled("form")`
+// 	display: flex;
+// 	flex-direction: column;
+// 	align-items: center;
+// `;
 
-const NameLabel = styled("label")`
-	font-weight: bold;
-	font-size: 3vh;
-`;
+// const NameLabel = styled("label")`
+// 	font-weight: bold;
+// 	font-size: 3vh;
+// `;
 
-const NameInput = styled("input")`
-	border-radius: 5px;
-	width: 200px;
-	height: 30px;
-	text-align: center;
-	margin: 1%;
-`;
+// const NameInput = styled("input")`
+// 	border-radius: 5px;
+// 	width: 200px;
+// 	height: 30px;
+// 	text-align: center;
+// 	margin: 1%;
+// `;
 
-const Save = styled("input")`
-	font-size: 3vh;
-	font-weight: bold;
-	margin-bottom: 5%;
-	width: 50%;
-	height: 50px;
-	border: 2px solid black;
-	border-radius: 10px;
-	background-color: red;
-	padding: 0.5%;
-	box-shadow: 5px 5px 3px;
-	&:hover {
-		cursor: pointer;
+// const Save = styled("input")`
+// 	font-size: 3vh;
+// 	font-weight: bold;
+// 	margin-bottom: 5%;
+// 	width: 50%;
+// 	height: 50px;
+// 	border: 2px solid black;
+// 	border-radius: 10px;
+// 	background-color: red;
+// 	padding: 0.5%;
+// 	box-shadow: 5px 5px 3px;
+// 	&:hover {
+// 		cursor: pointer;
 
-		box-shadow: 5px 5px 5px yellow;
-	}
-`;
+// 		box-shadow: 5px 5px 5px yellow;
+// 	}
+// `;
 
 const DoneButton = styled("button")`
 	font-size: 3vh;

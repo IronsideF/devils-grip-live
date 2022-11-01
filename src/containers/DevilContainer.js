@@ -13,7 +13,7 @@ import {
 } from "../services/DevilService.js";
 import GameOverScreen from "../components/GameOverScreen.js";
 import HelperNode from "../components/HelperNode.js";
-import Leaderboard from "../components/Leaderboard.js";
+// import Leaderboard from "../components/Leaderboard.js";
 
 const DevilContainer = () => {
 	const [deck, setDeck] = useState(null);
@@ -210,13 +210,13 @@ const DevilContainer = () => {
 		setDifficulty("Normal");
 	};
 
-	const addScore = (score) => {
-		console.log(score);
-		let temp = [...scores];
-		temp.push(score);
-		let sorted = sortScores(temp);
-		setScores(sorted);
-	};
+	// const addScore = (score) => {
+	// 	console.log(score);
+	// 	let temp = [...scores];
+	// 	temp.push(score);
+	// 	let sorted = sortScores(temp);
+	// 	setScores(sorted);
+	// };
 
 	useEffect(() => {
 		if (!(cardBotX === "") && !cardTopX.code) {
@@ -262,19 +262,19 @@ const DevilContainer = () => {
 		}
 	}, [cardBotX]);
 
-	const sortScores = (scores) => {
-		let sortedScores = scores;
-		for (let x = 0; x < sortedScores.length; x++) {
-			for (let y = 0; y < sortedScores.length - 1; y++) {
-				if (sortedScores[y].score > sortedScores[y + 1].score) {
-					let temp = sortedScores[y];
-					sortedScores[y] = sortedScores[y + 1];
-					sortedScores[y + 1] = temp;
-				}
-			}
-		}
-		return sortedScores;
-	};
+	// const sortScores = (scores) => {
+	// 	let sortedScores = scores;
+	// 	for (let x = 0; x < sortedScores.length; x++) {
+	// 		for (let y = 0; y < sortedScores.length - 1; y++) {
+	// 			if (sortedScores[y].score > sortedScores[y + 1].score) {
+	// 				let temp = sortedScores[y];
+	// 				sortedScores[y] = sortedScores[y + 1];
+	// 				sortedScores[y + 1] = temp;
+	// 			}
+	// 		}
+	// 	}
+	// 	return sortedScores;
+	// };
 
 	const changeDifficulty = (event) => {
 		setDifficulty(event.target.value);
@@ -286,12 +286,12 @@ const DevilContainer = () => {
 		}
 	}, [gridCards]);
 
-	useEffect(() => {
-		getScores().then((data) => {
-			let sortedScores = sortScores(data);
-			setScores(sortedScores);
-		});
-	}, []);
+	// useEffect(() => {
+	// 	getScores().then((data) => {
+	// 		let sortedScores = sortScores(data);
+	// 		setScores(sortedScores);
+	// 	});
+	// }, []);
 
 	return (
 		<Wrapper>
@@ -300,7 +300,7 @@ const DevilContainer = () => {
 				<GameOverScreen
 					score={score}
 					exitGameOver={exitGameOver}
-					addScore={addScore}
+					// addScore={addScore}
 					difficulty={difficulty}
 				/>
 			) : (
@@ -356,7 +356,7 @@ const DevilContainer = () => {
 					) : null}
 				</>
 			)}
-			{gameOver ? <Leaderboard scores={scores} /> : <Instructions />}
+			{gameOver ? null : <Instructions />}
 		</Wrapper>
 	);
 };
